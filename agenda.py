@@ -17,6 +17,12 @@ for line in agenda:
 
 agenda.close()
 
+def mostra_conteudo(dados):
+	if dados ==  None:
+		return
+	
+	for data in dados:
+		print(f"{data}	{dados[data][0]}  {dados[data][1]}")
 
 def inserir():
 	nome = input("Nome: ")
@@ -88,7 +94,7 @@ while c != "end":
 	elif evento == eventos[1]:
 		nome = input("Nome a ser buscado: ")
 		buscado = busca(nome)
-		print(buscado)
+		mostra_conteudo(buscado)
 	elif evento == eventos[2]:
 		remove()
 	else:
